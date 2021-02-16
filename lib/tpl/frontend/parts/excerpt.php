@@ -1,1 +1,1 @@
-<p><?php echo get_the_excerpt(); ?></p>
+<?php echo get_the_excerpt();

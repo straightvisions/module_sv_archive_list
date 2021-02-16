@@ -1,5 +1,7 @@
 <?php
+	echo '<div class="'.$this->get_prefix('wrapper').'">';
 	echo $this->get_part('header');
+	echo '<div class="'.$this->get_prefix('content').'">';
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
@@ -19,4 +21,6 @@
 	}else{
 		echo $this->get_part('empty');
 	}
+	echo '</div>';
 	echo $this->get_part('footer');
+	echo '</div>';

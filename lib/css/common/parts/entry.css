@@ -1,0 +1,4 @@
+.template_sv_archive_list_entry{
+	display:flex;
+	flex-wrap: wrap;
+}

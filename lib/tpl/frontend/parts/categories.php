@@ -6,7 +6,7 @@
 	if ( ! empty( $categories ) ) {
 		foreach ( $categories as $category ) {
 			$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="'
-				. esc_attr( sprintf( __( 'View all posts in %s', 'sv100' ), $category->name ) ) .
+				. esc_attr( sprintf( __( 'View all posts in %s', 'template_sv_archive_list' ), $category->name ) ) .
 				'" class="' . $this->get_prefix( 'category' ) .'">'
 				. esc_html( $category->name ) . '</a>' . $separator;
 		}
