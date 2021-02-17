@@ -2,87 +2,8 @@
 	// this class could be part of different products
 	if(!class_exists('template_sv_archive_list')) {
 		// complete template logic should be here
-		class template_sv_archive_list{
-			private static $path		= '';
-			private static $url			= '';
-
-			private $instance			= false;
-			private $setting_prefix		= '';
-
-			private static $parts		= array();
-
-			public function __construct($instance, string $setting_prefix){
-				self::$parts		= array(
-					'common'				=> array(
-						'loaded'			=> true,
-						'label'				=> __('Common', 'template_sv_archive_list')
-					),
-					'entry'					=> array(
-						'loaded'			=> true,
-						'label'				=> __('Entry', 'template_sv_archive_list')
-					),
-					'empty'					=> array(
-						'loaded'			=> false,
-						'label'				=> __('Empty', 'template_sv_archive_list')
-					),
-					'header'				=> array(
-						'loaded'			=> false,
-						'label'				=> __('Header', 'template_sv_archive_list')
-					),
-					'footer'				=> array(
-						'loaded'			=> false,
-						'label'				=> __('Footer', 'template_sv_archive_list')
-					),
-					'featured_image'		=> array(
-						'loaded'			=> false,
-						'label'				=> __('Featured Image', 'template_sv_archive_list')
-					),
-					'title'					=> array(
-						'loaded'			=> false,
-						'label'				=> __('Title', 'template_sv_archive_list')
-					),
-					'excerpt'				=> array(
-						'loaded'			=> false,
-						'label'				=> __('Excerpt', 'template_sv_archive_list')
-					),
-					'read_more'				=> array(
-						'loaded'			=> false,
-						'label'				=> __('Read More', 'template_sv_archive_list')
-					),
-					'date'					=> array(
-						'loaded'			=> false,
-						'label'				=> __('Date', 'template_sv_archive_list')
-					),
-					'date_modified'			=> array(
-						'loaded'			=> false,
-						'label'				=> __('Date Modified', 'template_sv_archive_list')
-					),
-					'categories'			=> array(
-						'loaded'			=> false,
-						'label'				=> __('Categories', 'template_sv_archive_list')
-					)
-				);
-
-				// $instance is a SV-instance extending the SV core
-				$this->set_instance($instance)->set_setting_prefix($setting_prefix)->load_settings();
-
-				// templates are always within this path structure: /path-to-instance/path-to-object/lib/template-dir/
-				self::$path				= trailingslashit($this->get_instance()->get_path('lib/'.get_class()));
-				self::$url				= trailingslashit($this->get_instance()->get_url('lib/'.get_class()));
-
-				foreach($this->get_parts() as $part => $properties){
-					$this->get_script($this->get_prefix($part))
-						//->set_is_no_prefix()
-						->set_path($this->get_path('lib/css/common/parts/'.$part.'.css'), true, $this->get_url('lib/css/common/parts/'.$part.'.css'));
-				}
-
-				$this->get_script('config')
-					->set_path($this->get_path('lib/css/config/init.php'));
-
-				$this->get_script('common')
-					->set_path($this->get_path('lib/css/common/parts/common.css'));
-			}
-			private function load_settings(): template_sv_archive_list{
+		class template_sv_archive_list extends \sv_core\abstract_template_sv_archive{
+			protected function load_settings(): \sv_core\abstract_template_sv_archive{
 				$this->load_settings_common()
 				->load_settings_entry()
 				->load_settings_parts()
@@ -94,7 +15,7 @@
 
 				return $this;
 			}
-			private function load_settings_common(): template_sv_archive_list{
+			protected function load_settings_common(): template_sv_archive_list{
 				$this->get_setting( 'font', __('Common', 'template_sv_archive_list') )
 					->set_title( __( 'Font Family', 'template_sv_archive_list' ) )
 					->set_description( __( 'Choose a font for your text.', 'template_sv_archive_list' ) )
@@ -157,7 +78,7 @@
 
 				return $this;
 			}
-			private function load_settings_entry(): template_sv_archive_list{
+			protected function load_settings_entry(): template_sv_archive_list{
 				$this->get_setting( 'entry_bg_color', __('Entry', 'template_sv_archive_list') )
 					->set_title( __( 'Background Color', 'template_sv_archive_list' ) )
 					->set_is_responsive(true)
@@ -188,7 +109,7 @@
 
 				return $this;
 			}
-			private function load_settings_extra_styles(): template_sv_archive_list{
+			protected function load_settings_extra_styles(): template_sv_archive_list{
 				$this->get_setting( 'extra_styles' )
 					->set_title( __( 'Extra Styles', 'template_sv_archive_list' ) )
 					->load_type( 'group' );
@@ -226,7 +147,7 @@
 
 				return $this;
 			}
-			private function load_settings_parts(): template_sv_archive_list{
+			protected function load_settings_parts(): template_sv_archive_list{
 				$this->get_setting('show_header', __('Parts', 'template_sv_archive_list'))
 					->set_title( __( 'Show Archive Header', 'template_sv_archive_list' ) )
 					->set_description( __( 'Show or Hide this Template Part', 'template_sv_archive_list' ) )
@@ -289,7 +210,7 @@
 
 				return $this;
 			}
-			private function load_settings_part(string $part): template_sv_archive_list{
+			protected function load_settings_part(string $part): template_sv_archive_list{
 				$this->get_setting( $part.'_order', $part )
 					->set_title( __( 'Order', 'template_sv_archive_list' ) )
 					->set_description( __( 'Order part', 'template_sv_archive_list' ) )
@@ -351,7 +272,7 @@
 
 				return $this;
 			}
-			private function load_settings_part_default_values(string $part): template_sv_archive_list{
+			protected function load_settings_part_default_values(string $part): template_sv_archive_list{
 				if(
 					$part == 'featured_image'
 					|| $part == 'title'
@@ -412,113 +333,7 @@
 
 				return $this;
 			}
-			private function get_instance(){
-				return $this->instance;
-			}
-			private function set_instance($instance): template_sv_archive_list{
-				$this->instance	= $instance;
 
-				return $this;
-			}
-			public function get_setting_prefix( string $suffix = ''): string{
-				if( strlen( $suffix ) > 0 ) {
-					$suffix = '_' . $suffix;
-				}
-
-				return $this->setting_prefix . $suffix;
-			}
-			private function set_setting_prefix(string $setting_prefix): template_sv_archive_list{
-				$this->setting_prefix	= $setting_prefix;
-
-				return $this;
-			}
-			private function get_script( string $ID = ''){
-				return $this->get_instance()->get_script($this->get_prefix($this->get_setting_prefix($ID)));
-			}
-			private function get_setting( string $ID = '', string $cluster = ''){
-				return $this->get_instance()->get_setting($this->get_setting_prefix($ID), $cluster);
-			}
-			private function get_settings(){
-				return $this->get_instance()->get_settings();
-			}
-			public function get_parts(): array{
-				return self::$parts;
-			}
-			private function set_part_loaded(string $part): template_sv_archive_list{
-				self::$parts[$part]['loaded']	= true;
-
-				return $this;
-			}
-			private static function get_path( string $suffix = ''): string {
-				return self::$path . $suffix;
-			}
-			private static function get_url( string $suffix = ''): string {
-				return self::$url . $suffix;
-			}
-			private function get_prefix( string $suffix = ''): string {
-				if( strlen( $suffix ) > 0 ) {
-					$suffix = '_' . $suffix;
-				}
-
-				return get_class() . $suffix;
-			}
-			private function get_post_class( $class = '', $post_id = null ): string{
-				// Separates classes with a single space, collates classes for post DIV.
-				return 'class="'. $this->get_prefix('entry') . ' ' . esc_attr( implode( ' ', get_post_class( $class, $post_id ) ) ) . '"';
-			}
-			private function get_html(){
-				ob_start();
-				require(self::get_path('lib/tpl/frontend/loop.php'));
-				return ob_get_clean();
-			}
-			public function get_output(): string{
-				$output = $this->get_html();
-
-				// register styles for each part in use
-				foreach($this->get_parts() as $part => $properties){
-					if($properties['loaded'] === true){
-						$this->get_script($this->get_prefix($part))->set_is_enqueued();
-					}
-				}
-
-				$script		= $this->get_script('config')
-					->set_path(
-						$this->get_instance()->get_path_cached(get_class().'/'.$this->get_setting_prefix().'/frontend.css'),
-						true,
-						$this->get_instance()->get_url_cached(get_class().'/'.$this->get_setting_prefix().'/frontend.css')
-					)
-					->set_is_enqueued();
-
-				add_action( 'wp_footer', function() use($script) {
-					$this->cache_config_css($script);
-				}, 2 );
-
-				return $output;
-			}
-			private function get_part(string $part): string{
-				if(boolval($this->get_setting('show_'.$part)->get_data()) !== true){
-					return '';
-				}
-
-				$this->set_part_loaded($part);
-
-				ob_start();
-				require(self::get_path('lib/tpl/frontend/parts/'.$part.'.php'));
-				return '<div class="'.$this->get_prefix($part).'">'.ob_get_clean().'</div>';
-			}
-			// We want to serve cached CSS depending on active configuration
-			private function cache_config_css(\sv_core\scripts $script): template_sv_archive_list{
-				if ($script->get_css_cache_invalidated()) {
-					ob_start();
-					require($this->get_path('lib/css/config/init.php'));
-					$css = ob_get_clean();
-
-					file_put_contents($this->get_instance()->get_path_cached(get_class() . '/' . $this->get_setting_prefix() . '/frontend.css'), $css);
-
-					$script->set_css_cache_invalidated(false);
-				}
-				return $this;
-			}
 		}
 
 		// register template once
