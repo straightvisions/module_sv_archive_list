@@ -341,7 +341,7 @@
 			// initialize template once
 			$archives['template_sv_archive_list'] = array(
 				'path'			=> trailingslashit(dirname(__FILE__)),
-				'label'			=> __('List')
+				'label'			=> __('List', 'template_sv_archive_list')
 			);
 
 			return $archives;
