@@ -42,14 +42,19 @@
 			'.template_sv_archive_list_'.$part,
 			array_merge(
 				$this->get_setting($part.'_order')->get_css_data('order'),
-				$this->get_setting($part.'_font')->get_css_data('font-family'),
-				$this->get_setting($part.'_font_size')->get_css_data('font-size','','px'),
-				$this->get_setting($part.'_line_height')->get_css_data('line-height'),
-				$this->get_setting($part.'_text_color')->get_css_data(),
 				$this->get_setting($part.'_bg_color')->get_css_data('background-color'),
 				$this->get_setting($part.'_padding')->get_css_data('padding'),
 				$this->get_setting($part.'_margin')->get_css_data(),
 				$this->get_setting($part.'_border')->get_css_data()
+			)
+		);
+		echo $settings->build_css(
+			'.template_sv_archive_list_'.$part, '.template_sv_archive_list_'.$part.' *, .template_sv_archive_list_'.$part.' *:hover',
+			array_merge(
+				$this->get_setting($part.'_font')->get_css_data('font-family'),
+				$this->get_setting($part.'_font_size')->get_css_data('font-size','','px'),
+				$this->get_setting($part.'_line_height')->get_css_data('line-height'),
+				$this->get_setting($part.'_text_color')->get_css_data()
 			)
 		);
 	}
