@@ -190,6 +190,12 @@
 					->set_default_value(1)
 					->load_type( 'checkbox' );
 
+				$this->get_setting('show_author', __('Parts', 'template_sv_archive_pba_default'))
+					->set_title( __( 'Show Author', 'template_sv_archive_pba_default' ) )
+					->set_description( __( 'Show or Hide this Template Part', 'template_sv_archive_pba_default' ) )
+					->set_default_value(1)
+					->load_type( 'checkbox' );
+
 				$this->get_setting('show_date', __('Parts', 'template_sv_archive_list'))
 					->set_title( __( 'Show Date', 'template_sv_archive_list' ) )
 					->set_description( __( 'Show or Hide this Template Part', 'template_sv_archive_list' ) )
