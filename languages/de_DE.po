@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: template_sv_archive_list\n"
+"POT-Creation-Date: 2021-03-03 23:07+0100\n"
+"PO-Revision-Date: 2021-03-03 23:07+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: lib/tpl/frontend/parts/categories.php:9
+#, php-format
+msgid "View all posts in %s"
+msgstr "Zeige alle Beiträge in %s"
+
+#: lib/tpl/frontend/parts/read_more.php:1
+msgid "Read more"
+msgstr "Weiter lesen"
+
+#: template_sv_archive_list.php:21 template_sv_archive_list.php:28
+#: template_sv_archive_list.php:34 template_sv_archive_list.php:40
+#: template_sv_archive_list.php:45 template_sv_archive_list.php:50
+#: template_sv_archive_list.php:63 template_sv_archive_list.php:76
+msgid "Common"
+msgstr "Allgemein"
+
+#: template_sv_archive_list.php:22 template_sv_archive_list.php:198
+msgid "Font Family"
+msgstr "Schriftart (Font Family)"
+
+#: template_sv_archive_list.php:23 template_sv_archive_list.php:199
+msgid "Choose a font for your text."
+msgstr "Wähle eine Schriftart für deinen Text."
+
+#: template_sv_archive_list.php:24 template_sv_archive_list.php:200
+msgid "Please activate module SV Webfontloader for this Feature."
+msgstr "Bitte aktiviere das Modul SV Webfontloader für diese Funktion."
+
+#: template_sv_archive_list.php:29 template_sv_archive_list.php:205
+msgid "Font Size"
+msgstr "Schriftgröße"
+
+#: template_sv_archive_list.php:30 template_sv_archive_list.php:206
+msgid "Font Size in Pixel"
+msgstr "Schriftgröße in Pixel"
+
+#: template_sv_archive_list.php:35 template_sv_archive_list.php:211
+msgid "Line Height"
+msgstr "Zeilenabstand"
+
+#: template_sv_archive_list.php:36 template_sv_archive_list.php:212
+msgid "Set line height as multiplier or with a unit."
+msgstr "Setze Zeilenhöhe als Multiplier oder mit einer Einheit."
+
+#: template_sv_archive_list.php:41 template_sv_archive_list.php:217
+msgid "Text Color"
+msgstr "Textfarbe"
+
+#: template_sv_archive_list.php:46 template_sv_archive_list.php:85
+#: template_sv_archive_list.php:222
+msgid "Background Color"
+msgstr "Hintergrundfarbe"
+
+#: template_sv_archive_list.php:51 template_sv_archive_list.php:90
+#: template_sv_archive_list.php:227
+msgid "Margin"
+msgstr "Margin"
+
+#: template_sv_archive_list.php:64 template_sv_archive_list.php:103
+#: template_sv_archive_list.php:232
+msgid "Padding"
+msgstr "Padding"
+
+#: template_sv_archive_list.php:77 template_sv_archive_list.php:108
+#: template_sv_archive_list.php:237
+msgid "Border"
+msgstr "Rahmen"
+
+#: template_sv_archive_list.php:84 template_sv_archive_list.php:89
+#: template_sv_archive_list.php:102 template_sv_archive_list.php:107
+msgid "Entry"
+msgstr "Eintrag"
+
+#: template_sv_archive_list.php:115 template_sv_archive_list.php:121
+#: template_sv_archive_list.php:127 template_sv_archive_list.php:133
+#: template_sv_archive_list.php:139 template_sv_archive_list.php:145
+#: template_sv_archive_list.php:151 template_sv_archive_list.php:157
+#: template_sv_archive_list.php:163 template_sv_archive_list.php:169
+#: template_sv_archive_list.php:175
+msgid "Parts"
+msgstr "Bereiche"
+
+#: template_sv_archive_list.php:116
+msgid "Show Archive Header"
+msgstr "Archivkopfzeile anzeigen"
+
+#: template_sv_archive_list.php:117 template_sv_archive_list.php:123
+#: template_sv_archive_list.php:129 template_sv_archive_list.php:135
+#: template_sv_archive_list.php:141 template_sv_archive_list.php:147
+#: template_sv_archive_list.php:153 template_sv_archive_list.php:159
+#: template_sv_archive_list.php:165 template_sv_archive_list.php:171
+#: template_sv_archive_list.php:177
+msgid "Show or Hide this Template Part"
+msgstr "Templatebereich anzeigen oder verstecken"
+
+#: template_sv_archive_list.php:122
+msgid "Show Archive Footer"
+msgstr "Archivfußzeile anzeigen"
+
+#: template_sv_archive_list.php:128
+msgid "Show Notice when empty"
+msgstr "Nachricht anzeigen, falls leer"
+
+#: template_sv_archive_list.php:134
+msgid "Show Featured Image"
+msgstr "Beitragsbild anzeigen"
+
+#: template_sv_archive_list.php:140
+msgid "Show Title"
+msgstr "Titel anzeigen"
+
+#: template_sv_archive_list.php:146
+msgid "Show Excerpt"
+msgstr "Auszug anzeigen"
+
+#: template_sv_archive_list.php:152
+msgid "Show Read More"
+msgstr "Weiterlesen anzeigen"
+
+#: template_sv_archive_list.php:158
+msgid "Show Author"
+msgstr "Autor anzeigen"
+
+#: template_sv_archive_list.php:164
+msgid "Show Date"
+msgstr "Datum anzeigen"
+
+#: template_sv_archive_list.php:170
+msgid "Show Date Modified"
+msgstr "Datum der letzten Bearbeitung anzeigen"
+
+#: template_sv_archive_list.php:176
+msgid "Show Categories"
+msgstr "Kategorie anzeigen"
+
+#: template_sv_archive_list.php:185
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: template_sv_archive_list.php:186
+msgid "Order part"
+msgstr "Reihenfolge Bereich"
+
+#: template_sv_archive_list.php:188
+msgid "Default"
+msgstr "Standard"
+
+#: template_sv_archive_list.php:314
+msgid "List"
+msgstr "Liste"
+
+#. Theme Name of the plugin/theme
+msgid "template_sv_archive_list"
+msgstr "template_sv_archive_list"
