@@ -49,7 +49,8 @@
 			)
 		);
 		echo $settings->build_css(
-			'.template_sv_archive_list_'.$part, '.template_sv_archive_list_'.$part.' *, .template_sv_archive_list_'.$part.' *:hover',
+			'.template_sv_archive_list_'.$part,
+			'.template_sv_archive_list_'.$part.' *',
 			array_merge(
 				$this->get_setting($part.'_font')->get_css_data('font-family'),
 				$this->get_setting($part.'_font_size')->get_css_data('font-size','','px'),
