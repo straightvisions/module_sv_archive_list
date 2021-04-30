@@ -1,1 +1,1 @@
-<?php echo get_the_date();
+<div><?php echo get_the_date(); ?></div>

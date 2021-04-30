@@ -1,1 +1,1 @@
-<a href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'template_sv_archive_list' );?></a>
+<a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'template_sv_archive_list' );?></a>

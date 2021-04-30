@@ -1,0 +1,13 @@
+.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on{
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on .template_sv_archive_list_header{
+	flex-basis: 100%;
+}
+
+.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on .template_sv_archive_list_sidebar_right{
+	flex-basis: 30%;
+	overflow: hidden;
+}

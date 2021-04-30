@@ -1,0 +1,15 @@
+.template_sv_archive_list_entry > *:hover,
+.template_sv_archive_list_entry > *:hover > * {
+	transition: all 0.3s;
+}
+.template_sv_archive_list_content{
+	display: flex;
+	flex-wrap: wrap;
+	margin: -10px;
+	max-width:calc(100% + 20px);
+	overflow:hidden;
+}
+.template_sv_archive_list_wrapper{
+	overflow:hidden;
+	justify-content: space-between;
+}

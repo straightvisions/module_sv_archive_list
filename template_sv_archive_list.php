@@ -18,6 +18,21 @@
 				return $this;
 			}
 			protected function load_settings_common(): template_sv_archive_list{
+				$this->get_setting( 'stack_active', __('Common', 'template_sv_archive_list') )
+					->set_title( __( 'Stack Columns', 'template_sv_archive_list' ) )
+					->set_description( __( 'You may want to stack Columns on narrow viewports.', 'template_sv_archive_list' ) )
+					->set_is_responsive(true)
+					->set_default_value(array(
+						'mobile'						=> 1,
+						'mobile_landscape'				=> 1,
+						'tablet'						=> 1,
+						'tablet_landscape'				=> 0,
+						'tablet_pro'					=> 0,
+						'tablet_pro_landscape'			=> 0,
+						'desktop'						=> 0
+					))
+					->load_type( 'checkbox' );
+
 				$this->get_setting( 'font', __('Common', 'template_sv_archive_list') )
 					->set_title( __( 'Font Family', 'template_sv_archive_list' ) )
 					->set_description( __( 'Choose a font for your text.', 'template_sv_archive_list' ) )
@@ -223,6 +238,16 @@
 					->set_is_responsive(true)
 					->load_type( 'color' );
 
+				$this->get_setting( $part.'_text_color_hover', $part )
+					->set_title( __( 'Text Color Hover', 'template_sv_archive_list' ) )
+					->set_is_responsive(true)
+					->load_type( 'color' );
+
+				$this->get_setting( $part.'_bg_color_hover', $part )
+					->set_title( __( 'Background Color Hover', 'template_sv_archive_list' ) )
+					->set_is_responsive(true)
+					->load_type( 'color' );
+
 				$this->get_setting( $part.'_margin', $part )
 					->set_title( __( 'Margin', 'template_sv_archive_list' ) )
 					->set_is_responsive(true)
@@ -304,6 +329,26 @@
 				return $this;
 			}
 
+			protected function get_sidebar(string $position): string{
+				if(!$this->get_instance()->get_module( 'sv_sidebar' )){
+					return '';
+				}
+				if(strlen($this->get_instance()->get_active_archive_type()) === 0){
+					return '';
+				}
+				return $this->get_instance()->get_module( 'sv_sidebar' )->load( $this->get_instance()->get_prefix($this->get_instance()->get_active_archive_type().'_'.$position));
+			}
+			protected function has_sidebar(string $position): string{
+				if(!$this->get_setting('show_sidebar_'.$position)->get_data()){
+					return false;
+				}
+
+				if(strlen($this->get_sidebar($position)) === 0){
+					return false;
+				}
+
+				return true;
+			}
 		}
 
 		// register template once

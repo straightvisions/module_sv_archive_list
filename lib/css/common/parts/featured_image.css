@@ -1,0 +1,16 @@
+.template_sv_archive_list_featured_image{
+	overflow: hidden;
+	height: 250px;
+}
+.template_sv_archive_list_featured_image a{
+	display:block;
+}
+.template_sv_archive_list_featured_image img{
+	object-fit: cover;
+	transition: transform .6s;
+	height:250px;
+	min-width:100%;
+}
+.template_sv_archive_list_featured_image img:hover{
+	transform: scale(1.3);
+}
