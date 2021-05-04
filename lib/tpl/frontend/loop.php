@@ -8,6 +8,7 @@
 
 	echo $this->get_part('header');
 	echo '<div class="'.$this->get_prefix('wrapper').' '.implode(' ', $has_sidebar).'">';
+	do_action('loop_start', $wp_query);
 	echo $this->get_part('sidebar_top');
 	echo $this->get_part('sidebar_left');
 	echo '<div class="'.$this->get_prefix('content').'">';
