@@ -21,6 +21,7 @@
 				echo $this->get_part('title');
 				echo $this->get_part('excerpt');
 				echo $this->get_part('read_more');
+				echo $this->get_part('author');
 				echo $this->get_part('date');
 				echo $this->get_part('date_modified');
 				echo $this->get_part('categories');

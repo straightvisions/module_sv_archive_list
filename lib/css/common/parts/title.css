@@ -1,3 +1,6 @@
 .template_sv_archive_list_title{
 	flex-basis:100%;
 }
+.template_sv_archive_list_title a{
+	display:block;
+}

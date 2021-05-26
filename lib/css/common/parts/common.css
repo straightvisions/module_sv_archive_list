@@ -5,8 +5,6 @@
 .template_sv_archive_list_content{
 	display: flex;
 	flex-wrap: wrap;
-	margin: -10px;
-	max-width:calc(100% + 20px);
 	overflow:hidden;
 	align-items: flex-start;
 	align-content: flex-start;
@@ -14,4 +12,7 @@
 .template_sv_archive_list_wrapper{
 	overflow:hidden;
 	justify-content: space-between;
+}
+.template_sv_archive_list_entry > *{
+	max-width: 100%;
 }
