@@ -82,9 +82,34 @@
 		)
 	);
 
+	// Header
+	echo $settings->build_css(
+		'.template_sv_archive_list_header',
+		array_merge(
+			$this->get_setting('header_bg_color')->get_css_data('background-color'),
+			$this->get_setting('header_padding')->get_css_data('padding'),
+			$this->get_setting('header_border')->get_css_data()
+		)
+	);
+	echo $settings->build_css(
+		'.template_sv_archive_list_header header',
+		array_merge(
+			$this->get_setting('header_margin')->get_css_data()
+		)
+	);
+	echo $settings->build_css(
+		'.template_sv_archive_list_header header > *',
+		array_merge(
+			$this->get_setting('header_font')->get_css_data('font-family'),
+			$this->get_setting('header_font_size')->get_css_data('font-size','','px'),
+			$this->get_setting('header_line_height')->get_css_data('line-height'),
+			$this->get_setting('header_text_color')->get_css_data()
+		)
+	);
+
 	// Parts
 	foreach($this->get_parts() as $part => $properties){
-		if($part == 'common' || $part == 'entry'){
+		if($part == 'common' || $part == 'entry'  || $part == 'header'){
 			continue;
 		}
 
@@ -117,8 +142,8 @@
 		echo $settings->build_css(
 			'.template_sv_archive_list_'.$part,
 			array_merge(
-				$this->get_setting($part.'_bg_color')->get_css_data('background-color'),
-				$this->get_setting($part.'_order')->get_css_data('order')
+				$this->get_setting($part.'_order')->get_css_data('order'),
+				$this->get_setting($part.'_margin')->get_css_data()
 			)
 		);
 
@@ -128,7 +153,7 @@
 			array_merge(
 				$this->get_setting($part.'_padding')->get_css_data('padding'),
 				$this->get_setting($part.'_border')->get_css_data(),
-				$this->get_setting($part.'_margin')->get_css_data()
+				$this->get_setting($part.'_bg_color')->get_css_data('background-color')
 			)
 		);
 
