@@ -1,3 +1,6 @@
 .template_sv_archive_list_excerpt{
 	flex-basis:100%;
 }
+.template_sv_archive_list_excerpt p{
+	margin:0;
+}

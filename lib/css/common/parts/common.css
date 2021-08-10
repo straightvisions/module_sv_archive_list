@@ -6,7 +6,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	overflow:hidden;
-	align-items: flex-start;
+	align-items: stretch;
 	align-content: flex-start;
 }
 .template_sv_archive_list_wrapper{
