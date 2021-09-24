@@ -8,6 +8,7 @@
 	overflow:hidden;
 	align-items: stretch;
 	align-content: flex-start;
+	justify-content:space-between;
 }
 .template_sv_archive_list_wrapper{
 	overflow:hidden;
@@ -16,3 +17,4 @@
 .template_sv_archive_list_entry > *{
 	max-width: 100%;
 }
+
