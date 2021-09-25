@@ -1,13 +1,14 @@
-.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on{
+.template_sv_archive_list_wrapper.has-sidebar-right{
 	display:flex;
 	flex-wrap: wrap;
 }
 
-.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on .template_sv_archive_list_header{
+.template_sv_archive_list_wrapper.has-sidebar-right .template_sv_archive_list_header{
 	flex-basis: 100%;
 }
 
-.template_sv_archive_list_wrapper.template_sv_archive_list_sidebar_right_on .template_sv_archive_list_sidebar_right{
-	flex-basis: 30%;
+/* @todo makee setting */
+.template_sv_archive_list_wrapper.has-sidebar-right .template_sv_archive_list_sidebar_right{
+	flex-basis: calc(30% - 20px);
 	overflow: hidden;
 }

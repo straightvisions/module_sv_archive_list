@@ -1,9 +1,9 @@
 <?php
 	$has_sidebar		= array(
-		'top'			=> $this->has_sidebar('top') ? $this->get_prefix('sidebar_top_on') : '',
-		'right'			=> $this->has_sidebar('right') ? $this->get_prefix('sidebar_right_on') : '',
-		'bottom'		=> $this->has_sidebar('bottom') ? $this->get_prefix('sidebar_bottom_on') : '',
-		'left'			=> $this->has_sidebar('left') ? $this->get_prefix('sidebar_left_on') : ''
+		'top'			=> $this->has_sidebar('top')    ? 'has-sidebar-top'     : '',
+		'right'			=> $this->has_sidebar('right')  ? 'has-sidebar-right'   : '',
+		'bottom'		=> $this->has_sidebar('bottom') ? 'has-sidebar-bottom'  : '',
+		'left'			=> $this->has_sidebar('left')   ? 'has-sidebar-left'    : ''
 	);
 
 	echo $this->get_part('header');
