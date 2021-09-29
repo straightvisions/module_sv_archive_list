@@ -336,7 +336,7 @@
 				if(strlen($this->get_instance()->get_active_archive_type()) === 0){
 					return '';
 				}
-				
+
 				return $this->get_instance()->get_module( 'sv_sidebar' )->load(
 					$this->get_setting( 'show_sidebar_'.$position )->get_data()
 				);

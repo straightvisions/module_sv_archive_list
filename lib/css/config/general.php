@@ -34,7 +34,7 @@
 	$properties['flex-direction']	= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	// max width
-	$stack							= array_map(function ($val) { return $val ? 'calc(100%)' : 'calc(70% - 20px)'; }, $stack_active->get_data());
+	$stack							= array_map(function ($val) { return $val ? 'calc(100%)' : 'calc(70% - 10px)'; }, $stack_active->get_data());
 	$properties['flex-basis']		= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	echo $settings->build_css(
@@ -43,7 +43,7 @@
 	);
 
 	// max width
-	$stack							= array_map(function ($val) { return $val ? 'calc(100% - 20px)' : 'calc(50% - 20px)'; }, $stack_active->get_data());
+	$stack							= array_map(function ($val) { return $val ? 'calc(100% - 20px)' : 'calc(50% - 10px)'; }, $stack_active->get_data());
 	$properties['flex-basis']		= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	echo $settings->build_css(

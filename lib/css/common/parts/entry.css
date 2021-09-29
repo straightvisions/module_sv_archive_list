@@ -1,6 +1,6 @@
 .template_sv_archive_list_entry{
 	display:flex;
 	flex-wrap: wrap;
-	max-width:calc(100% - 20px);
+	max-width:100%;
 	overflow: hidden;
 }
