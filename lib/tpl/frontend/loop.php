@@ -7,9 +7,9 @@
 	);
 
 	echo $this->get_part('header');
+	echo $this->get_part('sidebar_top');
 	echo '<div class="'.$this->get_prefix('wrapper').' '.implode(' ', $has_sidebar).'">';
 	do_action('loop_start', $wp_query);
-	echo $this->get_part('sidebar_top');
 	echo $this->get_part('sidebar_left');
 	echo '<div class="'.$this->get_prefix('content').'">';
 	if ( have_posts() ) {
@@ -34,6 +34,6 @@
 	}
 	echo '</div>';
 	echo $this->get_part('sidebar_right');
-	echo $this->get_part('sidebar_bottom');
 	echo '</div>';
+	echo $this->get_part('sidebar_bottom');
 	echo $this->get_part('footer');
