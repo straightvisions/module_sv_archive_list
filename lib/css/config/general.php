@@ -27,6 +27,7 @@
 
 	// maybe stack
 	$stack_active					= $this->get_setting('stack_active');
+	$column_spacing					= intval($this->get_setting( 'column_spacing' )->get_data());
 	$properties						= array();
 
 	// column or row
@@ -34,7 +35,7 @@
 	$properties['flex-direction']	= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	// max width
-	$stack							= array_map(function ($val) { return $val ? 'calc(100%)' : 'calc(70% - 10px)'; }, $stack_active->get_data());
+	$stack							= array_map(function ($val) use($column_spacing) { return $val ? 'calc(100%)' : 'calc(70% - '.$column_spacing.'px)'; }, $stack_active->get_data());
 	$properties['flex-basis']		= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	echo $settings->build_css(
@@ -43,7 +44,7 @@
 	);
 
 	// max width
-	$stack							= array_map(function ($val) { return $val ? 'calc(100% - 20px)' : 'calc(50% - 10px)'; }, $stack_active->get_data());
+	$stack							= array_map(function ($val) use($column_spacing) { return $val ? 'calc(100% - '.$column_spacing.'px)' : 'calc(50% - '.ceil($column_spacing / 2).'px)'; }, $stack_active->get_data());
 	$properties['flex-basis']		= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	echo $settings->build_css(

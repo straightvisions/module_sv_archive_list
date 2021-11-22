@@ -1,14 +1,14 @@
-.template_sv_archive_list_wrapper.has-sidebar-right{
+.template_sv_archive_list_wrapper.template_sv_archive_list_has_sidebar_right{
 	display:flex;
 	flex-wrap: wrap;
 }
 
-.template_sv_archive_list_wrapper.has-sidebar-right .template_sv_archive_list_header{
+.template_sv_archive_list_wrapper.template_sv_archive_list_has_sidebar_right .template_sv_archive_list_header{
 	flex-basis: 100%;
 }
 
 /* @todo makee setting */
-.template_sv_archive_list_wrapper.has-sidebar-right .template_sv_archive_list_sidebar_right{
+.template_sv_archive_list_wrapper.template_sv_archive_list_has_sidebar_right .template_sv_archive_list_sidebar_right{
 	flex-basis: calc(30% - 20px);
 	overflow: hidden;
 }

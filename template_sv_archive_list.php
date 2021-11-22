@@ -62,6 +62,12 @@
 					->set_is_responsive(true)
 					->load_type( 'color' );
 
+				$this->get_setting( 'column_spacing', __('Common', 'template_sv_archive_list') )
+					->set_title( __( 'Column Spacing', 'template_sv_archive_list' ) )
+					->set_description( __( 'Set a Spacing in Pixel for columns', 'template_sv_archive_list' ) )
+					->set_default_value(10)
+					->load_type( 'text' );
+
 				$this->get_setting( 'margin', __('Common', 'template_sv_archive_list') )
 					->set_title( __( 'Margin', 'template_sv_archive_list' ) )
 					->set_is_responsive(true)
