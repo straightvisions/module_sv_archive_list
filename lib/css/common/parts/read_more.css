@@ -1,3 +1,6 @@
 .template_sv_archive_list_read_more a{
 	display:inline-block;
 }
+.template_sv_archive_list_read_more a:focus{
+	color:inherit;
+}
