@@ -26,7 +26,6 @@
 	);
 
 	// maybe stack
-	$stack_active					= $this->get_setting('stack_active');
 	$column_spacing					= intval($this->get_setting( 'column_spacing' )->get_data());
 	$properties						= array();
 
