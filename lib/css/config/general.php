@@ -43,7 +43,8 @@
 	);
 
 	// max width
-	$stack							= array_map(function ($val) use($column_spacing) { return $val ? 'calc(100% - '.$column_spacing.'px)' : 'calc(50% - '.ceil($column_spacing / 2).'px)'; }, $stack_active->get_data());
+	$columns						= $this->get_setting('columns');
+	$stack							= array_map(function ($val) use($column_spacing) { return 'calc(100% / '.$val.' - '.ceil($column_spacing / 2).'px)'; }, $columns->get_data());
 	$properties['flex-basis']		= $stack_active->prepare_css_property_responsive($stack,'','');
 
 	echo $settings->build_css(

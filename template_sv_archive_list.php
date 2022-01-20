@@ -19,8 +19,8 @@
 			}
 			protected function load_settings_common(): template_sv_archive_list{
 				$this->get_setting( 'stack_active', __('Common', 'template_sv_archive_list') )
-					->set_title( __( 'Stack Columns', 'template_sv_archive_list' ) )
-					->set_description( __( 'You may want to stack Columns on narrow viewports.', 'template_sv_archive_list' ) )
+					->set_title( __( 'Stack Sidebar Columns', 'template_sv_archive_list' ) )
+					->set_description( __( 'You may want to stack Sidebars on narrow viewports.', 'template_sv_archive_list' ) )
 					->set_is_responsive(true)
 					->set_default_value(array(
 						'mobile'						=> 1,
@@ -32,6 +32,21 @@
 						'desktop'						=> 0
 					))
 					->load_type( 'checkbox' );
+
+				$this->get_setting('columns', __('Common', 'template_sv_archive_list'))
+					->set_title( __( 'Columns', 'template_sv_archive_list' ) )
+					->set_description( __( 'Set number of columns for entries', 'template_sv_archive_list' ) )
+					->set_is_responsive(true)
+					->set_default_value(array(
+						'mobile'						=> 1,
+						'mobile_landscape'				=> 2,
+						'tablet'						=> 2,
+						'tablet_landscape'				=> 2,
+						'tablet_pro'					=> 2,
+						'tablet_pro_landscape'			=> 2,
+						'desktop'						=> 2
+					))
+					->load_type( 'number' );
 
 				$this->get_setting( 'font', __('Common', 'template_sv_archive_list') )
 					->set_title( __( 'Font Family', 'template_sv_archive_list' ) )
