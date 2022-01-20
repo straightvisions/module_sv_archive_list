@@ -1,3 +1,44 @@
+.template_sv_archive_list_header{
+	position:relative;
+	overflow:hidden;
+}
+.template_sv_archive_list_header header{
+	display: flex;
+	flex-direction:column;
+	min-height: 60vh;
+}
 .template_sv_archive_list_header .page-title{
-	margin:0;
+	margin:auto;
+	z-index: 10;
+}
+.template_sv_archive_list_header .archive-description{
+	margin:auto;
+	z-index: 10;
+}
+
+
+.template_sv_archive_list_header .template_sv_archive_list_featured_image,
+.template_sv_archive_list_header .template_sv_archive_list_featured_image picture
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index: 0;
+}
+.template_sv_archive_list_header .template_sv_archive_list_featured_image img{
+	object-fit:cover;
+	object-position: center;
+	width:100%;
+	height:100%;
+}
+.template_sv_archive_list_header .template_sv_archive_list_featured_image:after{
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	opacity: 0.5;
+	background-color: rgba( 0,0,0, 1 ) !important;
 }

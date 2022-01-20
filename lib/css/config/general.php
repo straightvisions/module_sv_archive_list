@@ -88,21 +88,23 @@
 		array_merge(
 			$this->get_setting('header_bg_color')->get_css_data('background-color'),
 			$this->get_setting('header_padding')->get_css_data('padding'),
-			$this->get_setting('header_border')->get_css_data()
-		)
-	);
-	echo $settings->build_css(
-		'.template_sv_archive_list_header header',
-		array_merge(
+			$this->get_setting('header_border')->get_css_data(),
 			$this->get_setting('header_margin')->get_css_data()
 		)
 	);
+
 	echo $settings->build_css(
-		'.template_sv_archive_list_header header > *',
+		'.template_sv_archive_list_header header .archive-description',
 		array_merge(
 			$this->get_setting('header_font')->get_css_data('font-family'),
 			$this->get_setting('header_font_size')->get_css_data('font-size','','px'),
-			$this->get_setting('header_line_height')->get_css_data('line-height'),
+			$this->get_setting('header_line_height')->get_css_data('line-height')
+		)
+	);
+
+	echo $settings->build_css(
+		'.template_sv_archive_list_header header > *',
+		array_merge(
 			$this->get_setting('header_text_color')->get_css_data()
 		)
 	);
