@@ -61,15 +61,15 @@
 			$this->get_setting('text_color')->get_css_data(),
 			$this->get_setting('bg_color')->get_css_data('background-color'),
 			$this->get_setting('padding')->get_css_data('padding'),
-			$this->get_setting('border')->get_css_data(),
-			$this->get_setting('margin')->get_css_data()
+			$this->get_setting('border')->get_css_data()
 		)
 	);
 
 	echo $settings->build_css(
 		'.template_sv_archive_list_wrapper, .template_sv_archive_list_header > header',
 		array_merge(
-			$this->get_setting('max_width_wrapper_inner')->get_css_data('max-width')
+			$this->get_setting('max_width_wrapper_inner')->get_css_data('max-width'),
+			$this->get_setting('margin')->get_css_data()
 		)
 	);
 

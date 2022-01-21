@@ -24,6 +24,8 @@
 	width:100%;
 	height:100%;
 	z-index: 0;
+	left:0;
+	right:0;
 }
 .template_sv_archive_list_header .template_sv_archive_list_featured_image img{
 	object-fit:cover;
