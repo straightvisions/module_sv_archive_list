@@ -94,6 +94,14 @@
 		)
 	);
 
+	// Header
+	echo $settings->build_css(
+		'.template_sv_archive_list_header header',
+		array_merge(
+			$this->get_setting('header_min_height')->get_css_data('min-height')
+		)
+	);
+
 	echo $settings->build_css(
 		'.template_sv_archive_list_header header .archive-description',
 		array_merge(

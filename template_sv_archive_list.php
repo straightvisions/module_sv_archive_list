@@ -18,6 +18,13 @@
 				return $this;
 			}
 			protected function load_settings_common(): template_sv_archive_list{
+				$this->get_setting( 'header_min_height', __('Common', 'template_sv_archive_list') )
+					->set_title( __( 'Min Height', 'template_sv_archive_list' ) )
+					->set_description( __( 'Minimum Height Header', 'template_sv_archive_list' ) )
+					->set_is_responsive(true)
+					->set_default_value('60vh')
+					->load_type( 'text' );
+
 				$this->get_setting( 'stack_active', __('Common', 'template_sv_archive_list') )
 					->set_title( __( 'Stack Sidebar Columns', 'template_sv_archive_list' ) )
 					->set_description( __( 'You may want to stack Sidebars on narrow viewports.', 'template_sv_archive_list' ) )

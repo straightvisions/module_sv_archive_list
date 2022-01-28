@@ -5,7 +5,6 @@
 .template_sv_archive_list_header header{
 	display: flex;
 	flex-direction:column;
-	min-height: 60vh;
 }
 .template_sv_archive_list_header .page-title{
 	margin:auto;
