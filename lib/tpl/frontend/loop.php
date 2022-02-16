@@ -12,6 +12,7 @@
 	echo $this->get_part('sidebar_top');
 	echo $this->get_part('sidebar_left');
 	echo '<div class="'.$this->get_prefix('content').'">';
+
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
@@ -32,6 +33,7 @@
 	}else{
 		echo $this->get_part('empty');
 	}
+
 	echo '</div>';
 	echo $this->get_part('sidebar_right');
 	echo $this->get_part('sidebar_bottom');
