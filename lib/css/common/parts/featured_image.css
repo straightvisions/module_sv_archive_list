@@ -9,8 +9,8 @@
 	height:100%;
 }
 .template_sv_archive_list_featured_image img{
-	object-fit: cover;
-	object-position:center;
+	object-fit: cover !important;
+	object-position:center !important;
 	transition: transform .6s;
 	height:100% !important;
 	width:100% !important;
